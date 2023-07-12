@@ -1,0 +1,958 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Collective</class>
+ <widget class="QMainWindow" name="Collective">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1242</width>
+    <height>813</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QTabBar::tab:selected {
+	background:  rgb(100, 110, 150);
+	color: white;
+}
+
+QTabWidget::pane {
+	background: white;
+	border: 3px solid rgb(100, 110, 150);
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+
+QTabBar::tab {
+	background: rgb(160, 160, 190);
+	color: white;
+}
+
+QMainWindow {
+	background-color: rgb(41, 62, 109);
+}
+
+
+
+
+
+
+QPushButton {
+	background-color: rgb(35, 80, 135);
+	color: white;
+	border-radius: 5px;
+}
+
+QPushButton:hover {
+	background-color: rgb(70, 160, 255);
+}
+
+QGroupBox {
+	margin-top: 1ex;
+	border-radius: 5px;
+	border: 1px solid gray;
+}
+
+QGroupBox::title {
+	subcontrol-origin: margin;
+	subcontrol-position: top left;
+	left: 15px;
+	margin-left: 5px;
+	margin-right: 5px; 
+}
+
+QListWidget {
+	border: 1px solid gray;
+	color: rgb(35, 80, 135);
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QWidget" name="horizontalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>-1</y>
+      <width>1211</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QLabel" name="lblHeader">
+       <property name="font">
+        <font>
+         <pointsize>22</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel {
+	margin-top: 0;
+	padding-left: 35px;
+	color: rgb(225, 225, 255);
+}
+</string>
+       </property>
+       <property name="text">
+        <string>The Collective</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="verticalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>90</y>
+      <width>1211</width>
+      <height>691</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="vertContainer" stretch="0">
+     <property name="sizeConstraint">
+      <enum>QLayout::SetMinAndMaxSize</enum>
+     </property>
+     <item>
+      <layout class="QHBoxLayout" name="horzContainer" stretch="1,0,1">
+       <property name="sizeConstraint">
+        <enum>QLayout::SetMinAndMaxSize</enum>
+       </property>
+       <item>
+        <spacer name="horizontalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Maximum</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QTabWidget" name="tabWidget">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="palette">
+          <palette>
+           <active/>
+           <inactive/>
+           <disabled/>
+          </palette>
+         </property>
+         <property name="font">
+          <font>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="currentIndex">
+          <number>1</number>
+         </property>
+         <widget class="QWidget" name="color_scheduler">
+          <attribute name="title">
+           <string>Color Scheduler</string>
+          </attribute>
+          <widget class="QLabel" name="label_8">
+           <property name="geometry">
+            <rect>
+             <x>250</x>
+             <y>455</y>
+             <width>81</width>
+             <height>20</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Sort Accuracy:</string>
+           </property>
+          </widget>
+          <widget class="QTableWidget" name="tblOutputCS">
+           <property name="geometry">
+            <rect>
+             <x>450</x>
+             <y>210</y>
+             <width>461</width>
+             <height>231</height>
+            </rect>
+           </property>
+           <property name="sortingEnabled">
+            <bool>false</bool>
+           </property>
+           <property name="rowCount">
+            <number>4</number>
+           </property>
+           <property name="columnCount">
+            <number>2</number>
+           </property>
+           <row/>
+           <row/>
+           <row/>
+           <row/>
+           <column>
+            <property name="text">
+             <string>Color</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Quantity</string>
+            </property>
+           </column>
+          </widget>
+          <widget class="QLabel" name="lblQuantity">
+           <property name="geometry">
+            <rect>
+             <x>661</x>
+             <y>456</y>
+             <width>49</width>
+             <height>20</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="btnImpTC">
+           <property name="geometry">
+            <rect>
+             <x>250</x>
+             <y>340</y>
+             <width>75</width>
+             <height>24</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Import</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="lblTotal">
+           <property name="geometry">
+            <rect>
+             <x>528</x>
+             <y>456</y>
+             <width>49</width>
+             <height>20</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+          <widget class="QLabel" name="lblTruck">
+           <property name="geometry">
+            <rect>
+             <x>250</x>
+             <y>380</y>
+             <width>191</width>
+             <height>16</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Imported file ...</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_9">
+           <property name="geometry">
+            <rect>
+             <x>600</x>
+             <y>455</y>
+             <width>51</width>
+             <height>20</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Total Qty:</string>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="btnVisualize">
+           <property name="geometry">
+            <rect>
+             <x>250</x>
+             <y>410</y>
+             <width>75</width>
+             <height>24</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Visualize</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_10">
+           <property name="geometry">
+            <rect>
+             <x>450</x>
+             <y>455</y>
+             <width>71</width>
+             <height>20</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Total Entries:</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_11">
+           <property name="geometry">
+            <rect>
+             <x>250</x>
+             <y>210</y>
+             <width>341</width>
+             <height>16</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Import Color Sequence:</string>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="btnSaveCS">
+           <property name="geometry">
+            <rect>
+             <x>746</x>
+             <y>450</y>
+             <width>75</width>
+             <height>24</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Save</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_12">
+           <property name="geometry">
+            <rect>
+             <x>250</x>
+             <y>310</y>
+             <width>341</width>
+             <height>16</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Import truck closing csv:</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="lblColorSeq">
+           <property name="geometry">
+            <rect>
+             <x>250</x>
+             <y>280</y>
+             <width>191</width>
+             <height>16</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Imported file ...</string>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="btnResetCS">
+           <property name="geometry">
+            <rect>
+             <x>836</x>
+             <y>450</y>
+             <width>75</width>
+             <height>24</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Reset</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="lblAccuracy">
+           <property name="geometry">
+            <rect>
+             <x>345</x>
+             <y>457</y>
+             <width>51</width>
+             <height>20</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="btnImpCS">
+           <property name="geometry">
+            <rect>
+             <x>250</x>
+             <y>240</y>
+             <width>75</width>
+             <height>24</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Import</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_26">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>1109</width>
+             <height>78</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>24</pointsize>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QLabel {
+	color: rgb(30, 80, 135);
+}</string>
+           </property>
+           <property name="text">
+            <string>Color Scheduler</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </widget>
+         <widget class="QWidget" name="report_filter">
+          <attribute name="title">
+           <string>Report Filter</string>
+          </attribute>
+          <widget class="QPushButton" name="btnImport">
+           <property name="geometry">
+            <rect>
+             <x>80</x>
+             <y>73</y>
+             <width>75</width>
+             <height>24</height>
+            </rect>
+           </property>
+           <property name="tabletTracking">
+            <bool>true</bool>
+           </property>
+           <property name="text">
+            <string>Import</string>
+           </property>
+          </widget>
+          <widget class="QGroupBox" name="groupBox_2">
+           <property name="geometry">
+            <rect>
+             <x>650</x>
+             <y>480</y>
+             <width>251</width>
+             <height>151</height>
+            </rect>
+           </property>
+           <property name="title">
+            <string>Add/Delete Macros</string>
+           </property>
+           <widget class="QPushButton" name="btnCreateMacro">
+            <property name="geometry">
+             <rect>
+              <x>165</x>
+              <y>55</y>
+              <width>75</width>
+              <height>24</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>Create</string>
+            </property>
+           </widget>
+           <widget class="QLineEdit" name="inpCreateMacro">
+            <property name="geometry">
+             <rect>
+              <x>120</x>
+              <y>25</y>
+              <width>121</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_6">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>27</y>
+              <width>101</width>
+              <height>16</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>Create New Macro:</string>
+            </property>
+           </widget>
+           <widget class="QPushButton" name="btnDeleteMacro">
+            <property name="geometry">
+             <rect>
+              <x>165</x>
+              <y>118</y>
+              <width>75</width>
+              <height>24</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>Delete</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_7">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>90</y>
+              <width>101</width>
+              <height>16</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>Delete Macro:</string>
+            </property>
+           </widget>
+           <widget class="QComboBox" name="comDeleteMacro">
+            <property name="geometry">
+             <rect>
+              <x>120</x>
+              <y>90</y>
+              <width>121</width>
+              <height>22</height>
+             </rect>
+            </property>
+           </widget>
+          </widget>
+          <widget class="QLineEdit" name="inpDate">
+           <property name="geometry">
+            <rect>
+             <x>260</x>
+             <y>143</y>
+             <width>113</width>
+             <height>22</height>
+            </rect>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="btnFilter">
+           <property name="geometry">
+            <rect>
+             <x>910</x>
+             <y>143</y>
+             <width>101</width>
+             <height>24</height>
+            </rect>
+           </property>
+           <property name="tabletTracking">
+            <bool>true</bool>
+           </property>
+           <property name="text">
+            <string>Filter Content</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_2">
+           <property name="geometry">
+            <rect>
+             <x>260</x>
+             <y>113</y>
+             <width>71</width>
+             <height>16</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Sched Date</string>
+           </property>
+          </widget>
+          <widget class="QGroupBox" name="groupBox">
+           <property name="geometry">
+            <rect>
+             <x>220</x>
+             <y>480</y>
+             <width>411</width>
+             <height>151</height>
+            </rect>
+           </property>
+           <property name="title">
+            <string>Modify Macros</string>
+           </property>
+           <widget class="QComboBox" name="comMacros">
+            <property name="geometry">
+             <rect>
+              <x>200</x>
+              <y>24</y>
+              <width>111</width>
+              <height>22</height>
+             </rect>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_4">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>27</y>
+              <width>81</width>
+              <height>16</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>Mod Macros:</string>
+            </property>
+           </widget>
+           <widget class="QPushButton" name="btnFilterMacro">
+            <property name="geometry">
+             <rect>
+              <x>325</x>
+              <y>23</y>
+              <width>75</width>
+              <height>24</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>Filter</string>
+            </property>
+           </widget>
+           <widget class="QPushButton" name="btnApplyMod">
+            <property name="geometry">
+             <rect>
+              <x>325</x>
+              <y>75</y>
+              <width>75</width>
+              <height>24</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>Apply</string>
+            </property>
+           </widget>
+           <widget class="QLineEdit" name="inpCreateMod">
+            <property name="geometry">
+             <rect>
+              <x>200</x>
+              <y>74</y>
+              <width>113</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_3">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>77</y>
+              <width>191</width>
+              <height>16</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>Apply New Modifications (MODS):</string>
+            </property>
+           </widget>
+           <widget class="QPushButton" name="btnDeleteMod">
+            <property name="geometry">
+             <rect>
+              <x>325</x>
+              <y>117</y>
+              <width>75</width>
+              <height>24</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>Delete</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_5">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>120</y>
+              <width>131</width>
+              <height>16</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>Remove Modifications:</string>
+            </property>
+           </widget>
+           <widget class="QComboBox" name="comDeleteMod">
+            <property name="geometry">
+             <rect>
+              <x>200</x>
+              <y>118</y>
+              <width>111</width>
+              <height>22</height>
+             </rect>
+            </property>
+           </widget>
+           <widget class="QCheckBox" name="checkFollowNum">
+            <property name="geometry">
+             <rect>
+              <x>200</x>
+              <y>95</y>
+              <width>121</width>
+              <height>20</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>Followed by Num.</string>
+            </property>
+           </widget>
+          </widget>
+          <widget class="QLabel" name="label">
+           <property name="geometry">
+            <rect>
+             <x>90</x>
+             <y>113</y>
+             <width>49</width>
+             <height>16</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Attribute</string>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="btnSaveRF">
+           <property name="geometry">
+            <rect>
+             <x>930</x>
+             <y>510</y>
+             <width>91</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>14</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>Save</string>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="btnResetRF">
+           <property name="geometry">
+            <rect>
+             <x>930</x>
+             <y>570</y>
+             <width>91</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>14</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>Reset</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="lblErr">
+           <property name="geometry">
+            <rect>
+             <x>420</x>
+             <y>143</y>
+             <width>211</width>
+             <height>16</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+          <widget class="QLabel" name="lblFile">
+           <property name="geometry">
+            <rect>
+             <x>180</x>
+             <y>73</y>
+             <width>400</width>
+             <height>21</height>
+            </rect>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>400</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Imported File ...</string>
+           </property>
+           <property name="textFormat">
+            <enum>Qt::PlainText</enum>
+           </property>
+           <property name="textInteractionFlags">
+            <set>Qt::LinksAccessibleByMouse</set>
+           </property>
+          </widget>
+          <widget class="QLineEdit" name="inpType">
+           <property name="geometry">
+            <rect>
+             <x>90</x>
+             <y>143</y>
+             <width>113</width>
+             <height>22</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="inputMethodHints">
+            <set>Qt::ImhNone</set>
+           </property>
+          </widget>
+          <widget class="QTableWidget" name="tblOutputRF">
+           <property name="geometry">
+            <rect>
+             <x>80</x>
+             <y>183</y>
+             <width>941</width>
+             <height>281</height>
+            </rect>
+           </property>
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+             <horstretch>1</horstretch>
+             <verstretch>1</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <property name="sortingEnabled">
+            <bool>true</bool>
+           </property>
+           <property name="rowCount">
+            <number>5</number>
+           </property>
+           <property name="columnCount">
+            <number>5</number>
+           </property>
+           <row/>
+           <row/>
+           <row/>
+           <row/>
+           <row/>
+           <column>
+            <property name="text">
+             <string>Truck</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Order</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Line</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Item</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Mods</string>
+            </property>
+           </column>
+          </widget>
+          <widget class="QListWidget" name="listMods">
+           <property name="geometry">
+            <rect>
+             <x>80</x>
+             <y>473</y>
+             <width>121</width>
+             <height>171</height>
+            </rect>
+           </property>
+          </widget>
+          <widget class="QWidget" name="horizontalLayoutWidget_2">
+           <property name="geometry">
+            <rect>
+             <x>-1</x>
+             <y>0</y>
+             <width>1111</width>
+             <height>61</height>
+            </rect>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_2">
+            <item>
+             <widget class="QLabel" name="label_25">
+              <property name="font">
+               <font>
+                <pointsize>24</pointsize>
+                <bold>false</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QLabel {
+	color: rgb(30, 80, 135);
+}</string>
+              </property>
+              <property name="text">
+               <string>Report Filter</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Maximum</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
